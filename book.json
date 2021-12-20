@@ -1,0 +1,47 @@
+{
+    "title": "前端秘籍",
+    "description": "武林大法",
+    "author": "ashun",
+    "language": "zh-hans",
+    "root": ".",
+    "plugins": [
+        "donate",
+        "github-buttons@2.1.0",
+        "edit-link",
+        "mermaid-gb3",
+        "page-toc-button",
+        "toc",
+        "intopic-toc",
+        "page-treeview",
+        "mind-maps"
+    ],
+    "pluginsConfig": {
+        "donate": {
+            "wechat": "https://cdn.jsdelivr.net/gh/ashunun/Picture/img/wechat.png",
+            "alipay": "https://cdn.jsdelivr.net/gh/ashunun/Picture/img/alipay.jpg",
+            "title": "",
+            "button": "打赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+        },
+        "edit-link": {
+            "base": "https://github.com/darrenliuwei/gitbook/edit/master",
+            "label": "Edit This Page"
+        },
+        "page-toc-button": {
+            "maxTocDepth": 2,
+            "minTocSize": 2
+        },
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        },
+        "intopic-toc": {
+            "label": "In this article"
+        },
+        "page-treeview": {
+            "minHeaderCount": "2",
+            "minHeaderDeep": "2"
+        }
+    }
+}

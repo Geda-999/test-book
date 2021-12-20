@@ -1,0 +1,504 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>日期对象 · 前端秘籍</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ashun">
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-mind-maps/mindmaps.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="正则表达式.html" />
+    
+    
+    <link rel="prev" href="函数.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="变量.html">
+            
+                <a href="变量.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="函数.html">
+            
+                <a href="函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="日期对象.html">
+            
+                <a href="日期对象.html">
+            
+                    
+                    日期对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="正则表达式.html">
+            
+                <a href="正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >日期对象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"></div><ul>
+<li><div><a href="#&#x83B7;&#x53D6;&#x65E5;&#x671F;&#x5BF9;&#x8C61;">&#x83B7;&#x53D6;&#x65E5;&#x671F;&#x5BF9;&#x8C61;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x83B7;&#x53D6;&#x5E74;&#x6708;&#x65E5;&#x661F;&#x671F;&#x65F6;&#x5206;&#x79D2;">&#x83B7;&#x53D6;&#x5E74;&#x6708;&#x65E5;&#x661F;&#x671F;&#x65F6;&#x5206;&#x79D2;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x66F4;&#x6539;&#x65F6;&#x95F4;">&#x66F4;&#x6539;&#x65F6;&#x95F4;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;">&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5B57;&#x4E32;&#x8F6C;&#x539F;&#x578B;">&#x5B57;&#x4E32;&#x8F6C;&#x539F;&#x578B;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x6233;">&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x6233;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5B9A;&#x65F6;&#x5668;">&#x5B9A;&#x65F6;&#x5668;</a><i></i></div></li>
+<li><div><a href="#&#x8BA1;&#x65F6;&#x5668;">&#x8BA1;&#x65F6;&#x5668;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x83B7;&#x53D6;b&#x7AD9;&#x7684;&#x6240;&#x6709;&#x6807;&#x7B7E;&#x7B26;">&#x83B7;&#x53D6;B&#x7AD9;&#x7684;&#x6240;&#x6709;&#x6807;&#x7B7E;&#x7B26;</a><i></i></div></li>
+</ul>
+</div>
+
+<h2 id="&#x65E5;&#x671F;&#x5BF9;&#x8C61;">&#x65E5;&#x671F;&#x5BF9;&#x8C61;</h2>
+<h3 id="&#x83B7;&#x53D6;&#x65E5;&#x671F;&#x5BF9;&#x8C61;">&#x83B7;&#x53D6;&#x65E5;&#x671F;&#x5BF9;&#x8C61;</h3>
+<pre><code class="lang-jsx"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+</code></pre>
+<h4 id="&#x83B7;&#x53D6;&#x5E74;&#x6708;&#x65E5;&#x661F;&#x671F;&#x65F6;&#x5206;&#x79D2;">&#x83B7;&#x53D6;&#x5E74;&#x6708;&#x65E5;&#x661F;&#x671F;&#x65F6;&#x5206;&#x79D2;</h4>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> week = [<span class="hljs-string">&quot;&#x65E5;&quot;</span>, <span class="hljs-string">&quot;&#x4E00;&quot;</span>, <span class="hljs-string">&quot;&#x4E8C;&quot;</span>, <span class="hljs-string">&quot;&#x4E09;&quot;</span>, <span class="hljs-string">&quot;&#x56DB;&quot;</span>, <span class="hljs-string">&quot;&#x4E94;&quot;</span>, <span class="hljs-string">&quot;&#x516D;&quot;</span>]<span class="hljs-comment">//&#x65E5;&#x671F;&#x6570;&#x7EC4;</span>
+    <span class="hljs-keyword">var</span> time = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x65E5;&#x671F;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">var</span> year = time.getFullYear()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x5E74;</span>
+    <span class="hljs-keyword">var</span> month = time.getMonth() + <span class="hljs-number">1</span><span class="hljs-comment">//&#x83B7;&#x53D6;&#x6708;</span>
+    <span class="hljs-keyword">var</span> date = time.getDate()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x65E5;</span>
+    <span class="hljs-keyword">var</span> day = time.getDay()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x661F;&#x671F;</span>
+    <span class="hljs-keyword">var</span> hours = time.getHours()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x65F6;</span>
+    <span class="hljs-keyword">var</span> minutes = time.getMinutes()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x5206;</span>
+    <span class="hljs-keyword">var</span> seconds = time.getSeconds()<span class="hljs-comment">//&#x83B7;&#x53D6;&#x79D2;</span>
+
+    <span class="hljs-built_in">console</span>.log(year + <span class="hljs-string">&quot;&#x5E74;&quot;</span> + month + <span class="hljs-string">&quot;&#x6708;&quot;</span> + date + <span class="hljs-string">&quot;&#x65E5;&quot;</span> + <span class="hljs-string">&quot;&#x661F;&#x671F;&quot;</span> + week[day] + hours + <span class="hljs-string">&quot;&#x65F6;&quot;</span> + minutes + <span class="hljs-string">&quot;&#x5206;&quot;</span> + seconds + <span class="hljs-string">&quot;&#x79D2;&quot;</span>);
+    <span class="hljs-comment">//2021&#x5E74;12&#x6708;15&#x65E5;&#x661F;&#x671F;&#x4E09;14&#x65F6;53&#x5206;53&#x79D2;</span>
+</code></pre>
+<h5 id="&#x66F4;&#x6539;&#x65F6;&#x95F4;">&#x66F4;&#x6539;&#x65F6;&#x95F4;</h5>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> time = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">1999</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-built_in">console</span>.log(time);
+</code></pre>
+<h3 id="&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;">&#x683C;&#x5F0F;&#x5316;&#x65E5;&#x671F;</h3>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> time = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2021</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formDate</span>(<span class="hljs-params">formObject, sign = &quot;-&quot;</span>) </span>{
+        <span class="hljs-keyword">var</span> year = formObject.getFullYear()
+        <span class="hljs-keyword">var</span> month = formObject.getMonth() + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">var</span> date = formObject.getDate()
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formTime</span>(<span class="hljs-params">number</span>) </span>{
+            <span class="hljs-keyword">var</span> str = <span class="hljs-built_in">String</span>(number)<span class="hljs-comment">//&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+            <span class="hljs-keyword">return</span> str.length &gt;= <span class="hljs-number">2</span> ? str : <span class="hljs-string">&quot;0&quot;</span> + str
+            <span class="hljs-comment">//&#x4E09;&#x5143;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;2&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;str&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x5C31;&#x8FD4;&#x56DE;&#x62FC;&#x63A5;&#x7684;&#x5B57;&#x7B26;</span>
+        }
+        <span class="hljs-built_in">console</span>.log(year + sign + formTime(month) + sign + formTime(date));<span class="hljs-comment">//2021-01-01</span>
+    }
+    formDate(time)
+</code></pre>
+<h4 id="&#x5B57;&#x4E32;&#x8F6C;&#x539F;&#x578B;">&#x5B57;&#x4E32;&#x8F6C;&#x539F;&#x578B;</h4>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> str = <span class="hljs-string">&quot;2021-12-15&quot;</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formDate</span>(<span class="hljs-params">str, sign = &quot;-&quot;</span>) </span>{
+        <span class="hljs-keyword">var</span> arr = str.split(sign);
+        <span class="hljs-keyword">var</span> year = arr[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">var</span> month = arr[<span class="hljs-number">1</span>] - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">var</span> date = arr[<span class="hljs-number">2</span>];
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(year, month, date));
+    }
+    formDate(str); <span class="hljs-comment">//Wed Dec 15 2021 00:00:00 GMT+0800 (&#x4E2D;&#x56FD;&#x6807;&#x51C6;&#x65F6;&#x95F4;)</span>
+</code></pre>
+<h3 id="&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x6233;">&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x6233;</h3>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+    <span class="hljs-built_in">console</span>.log(t.getTime());<span class="hljs-comment">//&#x65F6;&#x95F4;&#x6233;&#x662F;1970&#x5E74;1&#x6708;1&#x65E5;0&#x65F6;0&#x5206;0&#x79D2;&#x5230;&#x73B0;&#x5728;&#x7684;&#x6BEB;&#x79D2;</span>
+</code></pre>
+<h4 id="&#x5B9A;&#x65F6;&#x5668;">&#x5B9A;&#x65F6;&#x5668;</h4>
+<pre><code class="lang-jsx">    <span class="hljs-keyword">var</span> time1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    <span class="hljs-keyword">var</span> t1 = time1.getTime();
+
+    <span class="hljs-keyword">var</span> time2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2022</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">var</span> t2 = time2.getTime();
+
+    <span class="hljs-keyword">var</span> t = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.abs(t1 - t2) / <span class="hljs-number">1000</span>); <span class="hljs-comment">//&#x73B0;&#x5728;&#x8DDD;&#x79BB;2020&#x8FD8;&#x6709;&#x591A;&#x5C11;&#x79D2;</span>
+    <span class="hljs-keyword">var</span> date = <span class="hljs-built_in">Math</span>.floor(t / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>)); <span class="hljs-comment">//&#x65E5;</span>
+
+    <span class="hljs-keyword">var</span> modul = t % (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>); <span class="hljs-comment">//&#x6C42;&#x4F59;(&#x7528;&#x8DDD;&#x79BB;2020&#x5269;&#x4E0B;&#x7684;&#x79D2;&#x6765;&#x6C42;&#x4F59;&#x5929;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x5C31;&#x662F;&#x65F6;)</span>
+    <span class="hljs-keyword">var</span> h = <span class="hljs-built_in">Math</span>.floor(modul / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>)); <span class="hljs-comment">//&#x65F6;</span>
+
+    modul = t % (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>);
+    <span class="hljs-keyword">var</span> m = <span class="hljs-built_in">Math</span>.floor(modul / <span class="hljs-number">60</span>); <span class="hljs-comment">//&#x5206;</span>
+
+    modul = t % <span class="hljs-number">60</span>;
+    <span class="hljs-keyword">var</span> s = <span class="hljs-built_in">Math</span>.floor(modul); <span class="hljs-comment">//&#x79D2;</span>
+
+    <span class="hljs-built_in">console</span>.log(date + <span class="hljs-string">&quot;&#x65E5;&quot;</span> + h + <span class="hljs-string">&quot;&#x65F6;&quot;</span> + m + <span class="hljs-string">&quot;&#x5206;&quot;</span> + s + <span class="hljs-string">&quot;&#x79D2;&quot;</span>);
+</code></pre>
+<h4 id="&#x8BA1;&#x65F6;&#x5668;">&#x8BA1;&#x65F6;&#x5668;</h4>
+<pre><code class="lang-jsx">    setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> time1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+        <span class="hljs-keyword">var</span> t1 = time1.getTime();
+
+        <span class="hljs-keyword">var</span> time2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2021</span>, <span class="hljs-number">12</span>, <span class="hljs-number">12</span>);
+        <span class="hljs-keyword">var</span> t2 = time2.getTime();
+
+        <span class="hljs-keyword">var</span> t = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.abs(t1 - t2) / <span class="hljs-number">1000</span>); <span class="hljs-comment">//&#x73B0;&#x5728;&#x8DDD;&#x79BB;2020&#x8FD8;&#x6709;&#x591A;&#x5C11;&#x79D2;</span>
+        <span class="hljs-keyword">var</span> date = <span class="hljs-built_in">Math</span>.floor(t / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>)); <span class="hljs-comment">//&#x65E5;</span>
+
+        <span class="hljs-keyword">var</span> modul = t % (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span>); <span class="hljs-comment">//&#x6C42;&#x4F59;(&#x7528;&#x8DDD;&#x79BB;2020&#x5269;&#x4E0B;&#x7684;&#x79D2;&#x6765;&#x6C42;&#x4F59;&#x5929;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x5C31;&#x662F;&#x65F6;)</span>
+        <span class="hljs-keyword">var</span> h = <span class="hljs-built_in">Math</span>.floor(modul / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>)); <span class="hljs-comment">//&#x65F6;</span>
+
+        modul = t % (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>);
+        <span class="hljs-keyword">var</span> m = <span class="hljs-built_in">Math</span>.floor(modul / <span class="hljs-number">60</span>); <span class="hljs-comment">//&#x5206;</span>
+
+        modul = t % <span class="hljs-number">60</span>;
+        <span class="hljs-keyword">var</span> s = <span class="hljs-built_in">Math</span>.floor(modul); <span class="hljs-comment">//&#x79D2;</span>
+        <span class="hljs-keyword">var</span> body = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;body&quot;</span>);
+        body.innerHTML = date + <span class="hljs-string">&quot;&#x65E5;&quot;</span> + h + <span class="hljs-string">&quot;&#x65F6;&quot;</span> + m + <span class="hljs-string">&quot;&#x5206;&quot;</span> + s + <span class="hljs-string">&quot;&#x79D2;&quot;</span>;
+    }, <span class="hljs-number">1000</span>);
+</code></pre>
+<h3 id="&#x83B7;&#x53D6;b&#x7AD9;&#x7684;&#x6240;&#x6709;&#x6807;&#x7B7E;&#x7B26;">&#x83B7;&#x53D6;B&#x7AD9;&#x7684;&#x6240;&#x6709;&#x6807;&#x7B7E;&#x7B26;</h3>
+<pre><code class="lang-jsx">    <span class="hljs-comment">//&#x7B2C;&#x4E00;&#x79CD;</span>
+    <span class="hljs-built_in">console</span>.log(
+        [
+            ...new <span class="hljs-built_in">Set</span>(
+                [...document.querySelectorAll(<span class="hljs-string">&quot;*&quot;</span>)].map((item) =&gt; item.nodeName)
+            ),
+        ].length
+    );
+
+    <span class="hljs-comment">//&#x7B2C;&#x4E8C;&#x79CD;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>($$(<span class="hljs-string">&quot;*&quot;</span>).map(e =&gt; e.tagName)));
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/Snipaste_2021-12-16_17-43-13.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ashunun/Picture/img/Snipaste_2021-12-16_17-43-31.png" alt=""></p>
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="函数.html" class="navigation navigation-prev " aria-label="Previous page: 函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="正则表达式.html" class="navigation navigation-next " aria-label="Next page: 正则表达式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"日期对象","level":"1.1.3","depth":2,"next":{"title":"正则表达式","level":"1.1.4","depth":2,"path":"正则表达式.md","ref":"正则表达式.md","articles":[]},"previous":{"title":"函数","level":"1.1.2","depth":2,"path":"函数.md","ref":"函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","mermaid-gb3","page-toc-button","toc","intopic-toc","page-treeview","mind-maps","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"In this article","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"livereload":{},"toc":{"addClass":true,"className":"toc"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/ashunun/Picture/img/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/ashunun/Picture/img/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"mind-maps":{},"highlight":{},"mermaid-gb3":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/darrenliuwei/gitbook/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ashun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端秘籍","language":"zh-hans","gitbook":"*","description":"武林大法"},"file":{"path":"日期对象.md","mtime":"2021-12-16T09:47:41.971Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-20T12:38:42.447Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mind-maps/mindmaps.dist.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
