@@ -1,0 +1,9 @@
+<?php
+$id=rand(1,5);
+$image[1]='https://tva1.sinaimg.cn/large/0072Vf1pgy1foxlnvil7zj31hc0u07lt.jpg';
+$image[2]='https://tva1.sinaimg.cn/large/0072Vf1pgy1fodqoysytvj31hc0u0qcq.jpg';
+$image[3]='https://tva1.sinaimg.cn/large/0072Vf1pgy1fodqoysytvj31hc0u0qcq.jpg';
+$image[4]='https://tva1.sinaimg.cn/large/0072Vf1pgy1fodqoysytvj31hc0u0qcq.jpg';
+$image[5]='https://tva1.sinaimg.cn/large/0072Vf1pgy1fodqoysytvj31hc0u0qcq.jpg';
+header("location:$image[$id]");
+?>
